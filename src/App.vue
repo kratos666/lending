@@ -2,9 +2,9 @@
 	<v-app>
 		<v-content>
 			<v-container fluid>
-				<step v-show="step1"></step>
-				<step v-show="step2"></step>
-				<step v-show="step3"></step>
+				<step v-if="curStep1">step1</step>
+				<step v-if="curStep2">step2</step>
+				<step v-if="curStep3">step3</step>
 			</v-container>
 		</v-content>
 	</v-app>
@@ -15,6 +15,11 @@
 	export default {
 		components: {
 			step
-		}
+		},
+		data() {
+			return {
+				step: curStep1
+			}
+		},
 	}
 </script>
