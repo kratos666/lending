@@ -5,7 +5,7 @@
     leave-active-class="animated bounceOutRight">
 			<v-card >
 				<transition>
-					<button1></button1>
+					<button1 step="1"></button1>
 				</transition>
 			</v-card>
 		</transition>
@@ -19,9 +19,7 @@
 			button1
 		},
 		data() {
-			return{
-
-			}
+			return{}	
 		}
 	}
 </script>

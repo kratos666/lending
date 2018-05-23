@@ -22,7 +22,7 @@
 		},
 		data() {
 			return {
-				currentStep: 'step1'
+				currentStep: "step1"
 			}
 		},
 		methods:{

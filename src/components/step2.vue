@@ -1,31 +1,22 @@
 <template name="step2">
-		<v-container fluid fill-height justify-center class="bgMain st2">
-			<transition   name="custom-classes-transition"
-    enter-active-class="animated tada"
-    leave-active-class="animated bounceOutRight">
-				<v-card >
-					<v-card-actions>
-						<v-btn color="success" @click="nextStep"> >>> </v-btn>
-						<v-btn color="danger" @click="prevStep"> //// </v-btn>
-					</v-card-actions>
-				</v-card>
-			</transition>
-		</v-container>
+	<v-container fluid fill-height justify-center class="bgMain st2">
+		<transition   name="custom-classes-transition"
+enter-active-class="animated tada"
+leave-active-class="animated bounceOutRight">
+			<v-card >
+				<transition>
+					<button1 step="2"></button1>
+				</transition>
+			</v-card>
+		</transition>
+	</v-container>
 </template>
 
 <script>
+	import button1 from "./buttons/button1.vue"
 	export default {
 		data() {
-			return {
-			}
-		},
-		methods: {
-			nextStep: function () {
-				this.$emit('changeStep', 'step3')
-			},
-			prevStep: function () {
-				this.$emit('changeStep', 'step1')
-			}
+			return {}
 		}
 	}
 </script>
