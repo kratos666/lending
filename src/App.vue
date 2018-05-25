@@ -4,8 +4,9 @@
 			 <transition   name="custom-classes-transition"
     leave-active-class="animated bounceOutRight">
 				<step
-					@changeStep="toStep"
-					:is="currentStep"
+					:current="step"
+					@step-change="toStep"
+					:is="curStep"
 				></step>
 			</transition>
 		</v-flex>
@@ -13,37 +14,45 @@
 </template>
 
 <script>
-	import step1 from "./components/step1.vue"
-	import step2 from "./components/step2.vue"
+	import step_1 from "./components/step1.vue"
+	import step_2 from "./components/step2.vue"
+	import step_3 from "./components/step3.vue"
+	import step_4 from "./components/step4.vue"
 	export default {
 		components: {
-			step1, 
-			step2
+			step_1, 
+			step_2,
+			step_3,
+			step_4
 		},
 		data() {
 			return {
-				currentStep: "step1"
+				curStep: 'step_1',
+				step: 1
 			}
 		},
 		methods:{
 			toStep: function (step) {
-				this.currentStep = step
+				var str = this.curStep;
+				this.curStep = str.slice(0, -1)  + step;
+				this.step = step;
 			}
 		}
 	}
 </script>
 
 <style>
-/* 	.bgMain{
-		min-height: 100vh
-	} */
+.bgMain{
+	background-position: center;
+	background-size: cover;
+	} 
 .bgMain .card{
-	display: flex;
-	justify-content:center;
-	align-items: flex-end;
-	min-height:50%;
-	width: 50%
+	background-color: transparent;
 	}
+
+.bgMain .card .card__actions{
+	justify-content: space-around;
+}
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }
